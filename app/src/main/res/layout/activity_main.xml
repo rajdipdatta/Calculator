@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F7FA"
+    tools:context=".MainActivity">
+
+    <!-- The top text display showing the math expression -->
+    <TextView
+        android:id="@+id/textExpression"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:gravity="bottom|end"
+        android:padding="16dp"
+        android:text=""
+        android:textSize="22sp"
+        android:textColor="#7A869A" />
+
+    <!-- The main text display showing the typing input or result -->
+    <TextView
+        android:id="@+id/textResult"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:gravity="bottom|end"
+        android:padding="16dp"
+        android:text="0"
+        android:textStyle="bold"
+        android:textColor="#172B4D"
+        android:maxLines="1"
+        android:ellipsize="none"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="24sp"
+        android:autoSizeMaxTextSize="54sp"
+        android:autoSizeStepGranularity="2sp" />
+    <!-- LAST 4 PROPERTIES ARE AUTO-SCALE CONFIGURATION: Enables automated text resizing -->
+
+    <!-- Keyboard Grid Area (5 Rows x 4 Columns) -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:useDefaultMargins="true">
+
+        <!-- ROW 1: Utilities & Operator -->
+        <android.widget.Button android:id="@+id/btnC" android:text="C" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#EAEFF5" android:textColor="#4A5568" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btnToggle" android:text="±" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#EAEFF5" android:textColor="#4A5568" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btnBackspace" android:text="⌫" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#EAEFF5" android:textColor="#4A5568" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btnDivide" android:text="÷" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFE3E3" android:textColor="#FF5630" android:textSize="24sp" android:textStyle="bold" />
+
+        <!-- ROW 2: Numbers & Operator -->
+        <android.widget.Button android:id="@+id/btn7" android:text="7" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFFFFF" android:textColor="#172B4D" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btn8" android:text="8" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFFFFF" android:textColor="#172B4D" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btn9" android:text="9" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFFFFF" android:textColor="#172B4D" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btnMultiply" android:text="×" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFE3E3" android:textColor="#FF5630" android:textSize="24sp" android:textStyle="bold" />
+
+        <!-- ROW 3: Numbers & Operator -->
+        <android.widget.Button android:id="@+id/btn4" android:text="4" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFFFFF" android:textColor="#172B4D" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btn5" android:text="5" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFFFFF" android:textColor="#172B4D" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btn6" android:text="6" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFFFFF" android:textColor="#172B4D" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btnSubtract" android:text="-" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFE3E3" android:textColor="#FF5630" android:textSize="24sp" android:textStyle="bold" />
+
+        <!-- ROW 4: Numbers & Operator -->
+        <android.widget.Button android:id="@+id/btn1" android:text="1" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFFFFF" android:textColor="#172B4D" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btn2" android:text="2" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFFFFF" android:textColor="#172B4D" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btn3" android:text="3" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFFFFF" android:textColor="#172B4D" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btnAdd" android:text="+" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFE3E3" android:textColor="#FF5630" android:textSize="24sp" android:textStyle="bold" />
+
+        <!-- ROW 5: Operations & Equal -->
+        <android.widget.Button android:id="@+id/btn0" android:text="0" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFFFFF" android:textColor="#172B4D" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btnDot" android:text="." android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#FFFFFF" android:textColor="#172B4D" android:textSize="22sp" />
+        <android.widget.Button android:id="@+id/btnPercent" android:text="%" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:background="@drawable/button_background" android:backgroundTint="#EAEFF5" android:textColor="#4A5568" android:textSize="22sp" />
+        <Button android:id="@+id/btnEqual" android:text="=" android:layout_width="0dp" android:layout_height="76dp" android:layout_columnWeight="1" android:backgroundTint="#FF5630" android:textColor="#FFFFFF" android:textSize="26sp" android:textStyle="bold" />
+
+    </GridLayout>
+
+</LinearLayout>
