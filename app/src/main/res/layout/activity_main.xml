@@ -8,6 +8,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:background="#F5F7FA"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <!-- The top text display showing the math expression -->

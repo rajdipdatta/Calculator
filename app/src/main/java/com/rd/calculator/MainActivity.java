@@ -5,6 +5,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +27,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // Links this Java class to our XML file
         setContentView(R.layout.activity_main);
+
+        // --- SYSTEM WINDOW INSETS SAFETY LAYER ---
+        // Finds your top-level layout element and automatically inserts bottom padding
+        // equal to the exact physical height of the Samsung home navigation bar
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content), (v, windowInsets) -> {
+            // Grab the safety metrics for standard system navigation bars
+            var insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+
+            // Apply padding to the layout window view to push your keyboard upward safely
+            v.setPadding(insets.left, insets.top, insets.right, insets.bottom);
+            return windowInsets;
+        });
 
         // Initialize our Model class
         engine = new CalculatorEngine();
